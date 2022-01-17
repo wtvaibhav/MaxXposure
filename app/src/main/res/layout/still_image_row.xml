@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_first"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="7dp"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_slide_first"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_side_view" />
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_add"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/iv_add_side_view"
+                            android:layout_width="48dp"
+                            android:layout_height="49dp"
+                            android:layout_marginTop="41dp"
+                            android:src="@drawable/ic_plus_big" />
+
+                        <TextView
+                            android:id="@+id/tv_add_side_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Side View"
+                            android:textColor="@color/white"
+                            android:textSize="12dp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_remove"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|bottom"
+                        android:orientation="horizontal"
+                        android:paddingBottom="20dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_view_type"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Side View"
+                                    android:textColor="@color/white"
+                                    android:textSize="14dp"
+                                    android:textStyle="normal" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_marginTop="5dp"
+                                    app:cardBackgroundColor="@color/colorPrimary"
+                                    app:cardCornerRadius="5dp" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/ll_remove_frist"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp">
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/cv_remove"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    app:cardBackgroundColor="@color/red_primary"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="1dp"
+                                    tools:viewBindingIgnore="true">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center">
+
+                                        <ImageView
+                                            android:layout_width="30dp"
+                                            android:layout_height="27dp"
+                                            android:src="@drawable/ic_dialog_close_dark" />
+                                    </LinearLayout>
+
+
+                                </androidx.cardview.widget.CardView>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_second"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_slide_second"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_rear_view" />
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_add_second"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/iv_add_side_view_second"
+                            android:layout_width="48dp"
+                            android:layout_height="49dp"
+                            android:layout_marginTop="41dp"
+                            android:src="@drawable/ic_plus_big" />
+
+                        <TextView
+                            android:id="@+id/tv_add_side_view_second"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Side View"
+                            android:textColor="@color/white"
+                            android:textSize="12dp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_remove_second"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|bottom"
+                        android:orientation="horizontal"
+                        android:paddingBottom="20dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_view_type_second"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Side View"
+                                    android:textColor="@color/white"
+                                    android:textSize="14dp"
+                                    android:textStyle="normal" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_marginTop="5dp"
+                                    app:cardBackgroundColor="@color/colorPrimary"
+                                    app:cardCornerRadius="5dp" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp">
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/cv_remove_second"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    app:cardBackgroundColor="@color/red_primary"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="1dp"
+                                    tools:viewBindingIgnore="true">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center">
+
+                                        <ImageView
+                                            android:layout_width="30dp"
+                                            android:layout_height="27dp"
+                                            android:src="@drawable/ic_dialog_close_dark" />
+                                    </LinearLayout>
+
+
+                                </androidx.cardview.widget.CardView>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

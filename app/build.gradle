@@ -1,0 +1,176 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.maxxposure.app"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    /* buildTypes {
+         release {
+             minifyEnabled true
+             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+         }
+     }*/
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    configurations {
+        cleanedAnnotations
+        compile.exclude group: 'org.jetbrains', module: 'annotations'
+    }
+    dexOptions {
+        //incremental = true;
+        preDexLibraries = false
+        javaMaxHeapSize "4g"
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+}
+
+dependencies {
+    implementation files('src/main/libs/midp_2.1.jar')
+    def support_version = "28.0.0"
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:29.0.0'
+    // implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.google.android.material:material:1.1.0-alpha02'
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.toptoche.searchablespinner:searchablespinnerlibrary:1.3.1'
+    //card view
+    implementation "com.android.support:cardview-v7:$support_version"
+    //recyclerview
+    implementation "com.android.support:recyclerview-v7:$support_version"
+    //volley
+    implementation 'com.android.volley:volley:1.1.1'
+    //gson
+    implementation 'com.google.code.gson:gson:2.6.2'
+    // for network call
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.3.1'
+    // for showing image through url
+    implementation 'com.squareup.picasso:picasso:2.3.2'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.daimajia.slider:library:1.1.5@aar'
+    // picasso image cashing
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+    implementation 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
+    //dexing archiver
+    implementation 'com.android.support:multidex:1.0.3'
+    //google material
+    implementation 'com.google.android.material:material:1.1.0'
+    //sms verify cather
+    //implementation 'com.github.stfalcon:smsverifycatcher:0.3.2'
+    //swiperefreshlayou
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+    //shrimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    //Butterknife
+//    implementation 'com.jakewharton:butterknife:10.1.0'
+//    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+
+    //dexter permissions
+    implementation "com.karumi:dexter:5.0.0"
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'com.github.bumptech.glide:annotations:4.11.0'
+    implementation('com.github.bumptech.glide:okhttp3-integration:4.0.0') {
+        exclude group: 'glide-parent'
+    }
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    //crop
+    implementation 'com.github.yalantis:ucrop:2.2.2'
+    //Image Crop
+    implementation 'com.jsibbold:zoomage:1.3.1'
+    //image slider new
+    implementation 'com.github.smarteist:autoimageslider:1.3.7'
+    //expandale layout
+    implementation 'com.github.aakira:expandable-layout:1.6.0@aar'
+    //akira expandable layout
+    implementation 'com.github.aakira:expandable-layout:1.4.2@aar'
+    //otp editText
+    implementation 'com.alimuzaffar.lib:pinentryedittext:1.3.1'
+    //firebase
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    //google api client
+    implementation 'com.google.android.gms:play-services:12.0.1'
+    //maps service
+    implementation 'com.google.android.gms:play-services-vision:20.1.3'
+    /*  implementation 'com.google.android.gms:play-services-gcm:17.0.0'
+      implementation 'com.google.android.gms:play-services-location:17.0.0'
+      implementation 'com.google.android.gms:play-services-places:17.0.0'
+      implementation 'com.google.android.gms:play-services-auth:18.1.0'*/
+    //keyboardHide
+    implementation 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:3.0.0-RC2'
+    //Qr Code
+    implementation 'com.journeyapps:zxing-android-embedded:3.4.0'
+
+    implementation "com.android.support:support-v13:$support_version"
+    //jsoup
+    implementation 'org.jsoup:jsoup:1.11.3'
+    // country code selection
+    implementation 'com.github.joielechong:countrycodepicker:2.4.2'
+    //progressbar
+    implementation 'com.mikhaellopez:circularprogressbar:1.0.0'
+    //otp viewer
+    implementation 'com.github.aabhasr1:OtpView:v1.1.2'
+    //noinspection GradleDynamicVersion
+    implementation 'com.yarolegovich:sliding-root-nav:1.1.1'
+
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'com.waynejo:androidndkgif:0.3.3'
+
+/*
+    // butter knife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+*/
+
+    //amazon s3
+    implementation 'com.amazonaws:aws-android-sdk-s3:2.6.31'
+    implementation 'com.amazonaws:aws-android-sdk-cognito:2.6.31'
+    implementation 'com.amazonaws:aws-android-sdk-cognitoidentityprovider'
+    implementation 'com.github.developerxrahul:amazon-s3-android-uploader:v1.4'
+    implementation 'com.amazonaws:aws-android-sdk-mobile-client:2.6.+'
+
+    implementation 'org.jetbrains:annotations-java5:15.0'
+
+    implementation 'com.github.Abhi347:NoobCameraFlash:0.2.0'
+
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
+
+    implementation 'com.otaliastudios:cameraview:2.7.1'
+}

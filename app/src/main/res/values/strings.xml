@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">MaxXposure</string>
+
+    <array name="today">
+        <item>Yesterday</item>
+        <item>Today</item>
+        <item>Tomorrow</item>
+    </array>
+
+    <string name="the_vehicle">The vehicle will be deleted permanently and cannot be restored.</string>
+    <string name="reg_no">Please re-check the entered Reg.No.\nwhich is as below.</string>
+    <string name="accept_terms">I agree that i have checked the Reg. No. and i wont be able to edit it again.</string>
+    <string name="delete_all">Are you sure? This step can be undone.</string>
+    <string name="refresh_and_all">All vehicles will be deleted permanently and cannot be restored.</string>
+
+    <string name="account_balance">Account Balance</string>
+    <string name="balance_currency">$</string>
+    <string name="balance_amount">524.99</string>
+    <string name="data_is_getting_saved_automatically">Data is getting saved automatically.</string>
+</resources>

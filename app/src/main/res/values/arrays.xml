@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="ld_activityScreenTitles">
+        <item>Home</item>
+        <item>Contact Us</item>
+        <item>Get Help</item>
+        <!-- <item>Logout</item>-->
+    </string-array>
+
+    <array name="ld_activityScreenIcons">
+        <item>@drawable/ic_trash</item>
+        <item>@drawable/ic_trash</item>
+        <item>@drawable/ic_trash</item>
+        <item>@drawable/ic_trash</item>
+        <item>@drawable/ic_trash</item>
+    </array>
+
+</resources>

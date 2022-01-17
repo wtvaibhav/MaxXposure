@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="100dp"
+        app:cardBackgroundColor="@color/text_black"
+        app:cardCornerRadius="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|start">
+
+                <ImageView
+                    android:id="@+id/iv_delete"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_trash_big" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/spacegrotesk_semibold"
+                    android:text="Delete Vehicle?"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/the_vehicle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:alpha="0.5"
+                android:fontFamily="@font/open_sans"
+                android:gravity="top"
+                android:text="@string/the_vehicle"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_weight="1"
+                    android:alpha="0.9"
+                    android:background="@null"
+                    android:fontFamily="@font/spacegrotesk_medium"
+                    android:text="Cancel"
+                    android:textColor="@color/white"
+                    android:textSize="19dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_proceed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    app:cardBackgroundColor="@color/red_primary"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginEnd="30dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:fontFamily="@font/spacegrotesk_medium"
+                            android:text="Delete"
+                            android:textColor="@color/text_black"
+                            android:textSize="19dp" />
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="37dp"
+                            android:layout_height="37dp"
+                            android:layout_marginEnd="10dp"
+                            app:cardBackgroundColor="@color/black2"
+                            app:cardCornerRadius="7dp"
+                            app:cardElevation="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/ic_baseline_chevron_right_red" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

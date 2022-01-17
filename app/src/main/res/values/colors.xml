@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <color name="colorPrimary">#53BAA9</color>
+    <color name="colorPrimaryDark">#409184</color>
+    <color name="colorAccent">#5BAEA0</color>
+
+    <color name="red_primary">#EB5757</color>
+
+
+    <color name="capturePrimaryLight">#9053BAA9</color>
+    <color name="capturePrimaryRed">#90BA5353</color>
+
+    <color name="secondry">#E5007D</color>
+    <color name="teritary">#2B2B2B</color>
+
+    <color name="black">#FF000000</color>
+    <color name="black2">#3F3F3F</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="input_bg">#DAEFEFEF</color>
+    <color name="input_bg2">#DA434343</color>
+
+    <color name="in_progress">#B5A057</color>
+    <color name="in_progress_light">#E6DBB1</color>
+
+
+    <color name="text_black">#2B2825</color>
+    <color name="text_black2">#595959</color>
+    <color name="text_light">#595959</color>
+    <color name="text_black3">#D5787878</color>
+    <color name="text_black4">#D5A1A1A1</color>
+
+    <color name="transparent_black_percent_60">#99000000</color>
+    <color name="cam_black">#70A1A1A1</color>
+
+
+</resources>
