@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/WargstechProject/maxxposureAndroid-main/app/src/main/res/layout/activity_scr_home.xml" value="0.1" />
+        <entry key="..\:/WargstechProject/maxxposureAndroid-main/app/src/main/res/layout/activity_scr_image_list.xml" value="0.1" />
+        <entry key="..\:/WargstechProject/maxxposureAndroid-main/app/src/main/res/layout/activity_scr_image_preview.xml" value="0.15625" />
+        <entry key="..\:/WargstechProject/maxxposureAndroid-main/app/src/main/res/layout/activity_scr_vin_no.xml" value="0.11322463768115942" />
+        <entry key="..\:/WargstechProject/maxxposureAndroid-main/app/src/main/res/layout/dlg_delete_vehicle.xml" value="0.1" />
+        <entry key="..\:/WargstechProject/maxxposureAndroid-main/app/src/main/res/layout/frg_home.xml" value="0.1" />
+        <entry key="..\:/WargstechProject/maxxposureAndroid-main/app/src/main/res/layout/item_your_vehicles_home.xml" value="0.4466666666666667" />
+        <entry key="..\:/WargstechProject/maxxposureAndroid-main/app/src/main/res/layout/still_image_row.xml" value="0.15625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

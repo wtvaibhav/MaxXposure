@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.developerxrahul:amazon-s3-android-uploader:v1.4@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/45863c7dd083f59c742e2236808555cb/jetified-amazon-s3-android-uploader-v1.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/45863c7dd083f59c742e2236808555cb/jetified-amazon-s3-android-uploader-v1.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/45863c7dd083f59c742e2236808555cb/jetified-amazon-s3-android-uploader-v1.4/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.developerxrahul/amazon-s3-android-uploader/v1.4/b7931427ffface4a9dc3b2d69284aba977e00b3d/amazon-s3-android-uploader-v1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
