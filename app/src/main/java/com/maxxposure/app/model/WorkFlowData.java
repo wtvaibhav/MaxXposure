@@ -15,7 +15,7 @@ public class WorkFlowData {
 
 
     public static class AllWorkflowDetails {
-        private String[] imageRatio;
+        private ImageRatio[] imageRatio;
 
         private String createdAt;
 
@@ -39,11 +39,11 @@ public class WorkFlowData {
 
         private String updatedAt;
 
-        public String[] getImageRatio() {
+        public ImageRatio[] getImageRatio() {
             return imageRatio;
         }
 
-        public void setImageRatio(String[] imageRatio) {
+        public void setImageRatio(ImageRatio[] imageRatio) {
             this.imageRatio = imageRatio;
         }
 

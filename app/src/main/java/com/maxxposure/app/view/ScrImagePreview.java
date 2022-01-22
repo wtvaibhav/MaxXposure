@@ -25,7 +25,10 @@ import com.maxxposure.app.utils.BitMapRotation;
 import com.maxxposure.app.utils.CustomToast;
 import com.maxxposure.app.utils.FileUtils;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 public class ScrImagePreview extends AppCompatActivity implements View.OnClickListener {
 
@@ -34,7 +37,8 @@ public class ScrImagePreview extends AppCompatActivity implements View.OnClickLi
     Bitmap bitmap = null;
     Bitmap croppedBitmap = null;
     private TextView tvDesc;
-
+    private SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
+    private String currentDateandTime = sdf.format(new Date());
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -195,10 +199,10 @@ public class ScrImagePreview extends AppCompatActivity implements View.OnClickLi
                     binding.cvUndo.setOnClickListener(this);
                 } else {
                     if (croppedBitmap != null) {
-                        FileUtils.saveBitmap(String.valueOf(ScrImageListing.selectedOption + ".jpeg"), croppedBitmap);
+                        FileUtils.saveBitmap(String.valueOf(ScrImageListing.selectedOption + currentDateandTime+".png"), croppedBitmap);
                     } else {
                         Bitmap bitmap = binding.ivPreview.getNewBitmap();
-                        FileUtils.saveBitmap(String.valueOf(ScrImageListing.selectedOption + ".jpeg"), bitmap);
+                        FileUtils.saveBitmap(String.valueOf(ScrImageListing.selectedOption + currentDateandTime+".png"), bitmap);
                     }
                     finish();
 

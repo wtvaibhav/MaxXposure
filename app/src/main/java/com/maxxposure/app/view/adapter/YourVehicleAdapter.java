@@ -75,6 +75,7 @@ public class YourVehicleAdapter extends RecyclerView.Adapter<YourVehicleAdapter.
             Picasso.with(frg.getActivity()).load(userStillImages.get(0).getImageUrl())
                     .placeholder(frg.getResources().getDrawable(R.drawable.ic_car_demo))
                     .error(frg.getResources().getDrawable(R.drawable.ic_car_demo))
+                    .resize(80,80)
                     .into(holder.iv_car);
 
         }
@@ -143,6 +144,7 @@ public class YourVehicleAdapter extends RecyclerView.Adapter<YourVehicleAdapter.
 
         TextView tv_cancel = dialog.findViewById(R.id.tv_cancel);
         CardView cv_proceed = dialog.findViewById(R.id.cv_proceed);
+
 
 
         tv_cancel.setOnClickListener(new View.OnClickListener() {

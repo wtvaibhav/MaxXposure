@@ -15,6 +15,8 @@ public class PostVehicleData {
 
     private String vehicleStatus;
 
+    private String vehicleVINNumberImageUrl;
+
     public ArrayList<UserSpinImage> getUserSpinImage() {
         return userSpinImage;
     }
@@ -63,7 +65,15 @@ public class PostVehicleData {
         this.vehicleStatus = vehicleStatus;
     }
 
-  public static  class UserStillImage {
+    public String getVehicleVINNumberImageUrl() {
+        return vehicleVINNumberImageUrl;
+    }
+
+    public void setVehicleVINNumberImageUrl(String vehicleVINNumberImageUrl) {
+        this.vehicleVINNumberImageUrl = vehicleVINNumberImageUrl;
+    }
+
+    public static  class UserStillImage {
 
         private String imageUrl;
 

@@ -71,6 +71,7 @@ public class ScrNavigation2 extends AppCompatActivity implements DrawerAdapter.O
         binding = DataBindingUtil.setContentView(this, R.layout.activity_scr_navigation2);
         binding.ivMenu.setOnClickListener(this);
 
+
         slidingRootNav = new SlidingRootNavBuilder(this)
                 .withMenuOpened(false)
                 .withContentClickableWhenMenuOpened(false)
@@ -85,7 +86,7 @@ public class ScrNavigation2 extends AppCompatActivity implements DrawerAdapter.O
                 createItemFor(POS_DASHBOARD).setChecked(true),
                 createItemFor(POS_CONTACT_US),
                 createItemFor(POS_GET_HELP),
-              //  createItemFor(POS_LOGOUT),
+                //  createItemFor(POS_LOGOUT),
                 new SpaceItem(48)));
         adapter.setListener(this);
 
@@ -109,12 +110,21 @@ public class ScrNavigation2 extends AppCompatActivity implements DrawerAdapter.O
         list.setLayoutManager(new LinearLayoutManager(this));
         list.setAdapter(adapter);
 
+        LinearLayout ll_logout = findViewById(R.id.ll_logout);
+        ll_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialogForOpMenu();
+            }
+        });
         adapter.setSelected(POS_DASHBOARD);
+
+
     }
 
     @Override
     public void onItemSelected(int position) {
-        Fragment selectedScreen =  new FrgHome();
+        Fragment selectedScreen = new FrgHome();
         if (position == POS_DASHBOARD) {
             selectedScreen = new FrgHome();
         } else if (position == POS_CONTACT_US) {

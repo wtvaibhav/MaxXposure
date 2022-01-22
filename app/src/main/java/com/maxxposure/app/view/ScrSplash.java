@@ -44,7 +44,7 @@ public class ScrSplash extends AppCompatActivity {
                     CustomIntent.startActivity(ScrSplash.this, ScrNavigation2.class);
                     //CustomIntent.startActivity(ScrSplash.this, ScrImageListing.class);
                 } else {
-                    CustomIntent.startActivity(ScrSplash.this, ScrNavigation.class);
+                    CustomIntent.startActivity(ScrSplash.this, ScrLogin.class);
                 }
             }
         }, 3000);

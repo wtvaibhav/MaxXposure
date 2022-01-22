@@ -36,6 +36,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class ScrVinNo extends AppCompatActivity implements View.OnClickListener, SupportBottomSheetDialog.BottomSheetListener {
 
@@ -46,6 +50,8 @@ public class ScrVinNo extends AppCompatActivity implements View.OnClickListener,
     public static final int RequestPermissionCode = 1;
     public static final int RequestPermissionCode2 = 2;
     public static final int REQUEST_IMAGE = 100;
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
+    String currentDateandTime = sdf.format(new Date());
 
     private String x;
     private Bitmap bitmap_user = null;
@@ -211,7 +217,7 @@ public class ScrVinNo extends AppCompatActivity implements View.OnClickListener,
                     String url1 = null;
                     Bitmap photo = (Bitmap) data.getExtras().get("data");
                     bitmap_user = photo;
-                    filePath = FileUtils.getAppFolderPath() + "vin.jpeg";
+                    filePath = FileUtils.getAppFolderPath()+currentDateandTime+ "vin.jpeg";
                     try {
                         photo.compress(Bitmap.CompressFormat.JPEG, 100, new FileOutputStream(filePath));
                     } catch (FileNotFoundException e) {
@@ -231,7 +237,7 @@ public class ScrVinNo extends AppCompatActivity implements View.OnClickListener,
                         photo = null;
                         imageStream3 = this.getContentResolver().openInputStream(imageUri3);
                         bitmap_user = BitmapFactory.decodeStream(imageStream3);
-                        filePath = FileUtils.getAppFolderPath() + "vin.jpg";
+                        filePath = FileUtils.getAppFolderPath()+currentDateandTime+ "vin.jpg";
                         try {
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                                 int orientation3 = FileUtils.getOrientation(imageUri3);

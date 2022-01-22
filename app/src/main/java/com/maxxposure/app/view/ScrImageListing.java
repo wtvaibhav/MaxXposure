@@ -45,7 +45,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -60,7 +63,8 @@ public class ScrImageListing extends AppCompatActivity implements View.OnClickLi
     private ActivityScrImageListBinding binding;
     //private UiBackButtonBinding backButtonBinding;
     private BrandAdapter adapter;
-
+    private SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
+    private String currentDateandTime = sdf.format(new Date());
 
     public static final int INTERIOR_FIRST = 7;
     public static final int INTERIOR_SECOND = 8;
@@ -151,7 +155,7 @@ public class ScrImageListing extends AppCompatActivity implements View.OnClickLi
                         cardFirst.setTag(imageTypeStill);
                         int finalPos = pos;
                         selectedOption = finalPos + 1;
-                        String path = baseFolderPath + selectedOption + ".png";
+                        String path = baseFolderPath + selectedOption+"/"+currentDateandTime + ".png";
                         ImageView ivImage = cardFirst.findViewById(R.id.iv_slide_first);
                         LinearLayout ll_remove = cardFirst.findViewById(R.id.ll_remove);
                         LinearLayout ll_add = cardFirst.findViewById(R.id.ll_add);
@@ -189,7 +193,8 @@ public class ScrImageListing extends AppCompatActivity implements View.OnClickLi
                             public void onClick(View view) {
                                 selectedOption = finalPos + 1;
                                 cvSelectedCard = (CardView) view;
-                                String path = baseFolderPath + selectedOption + ".png";
+                                String path = baseFolderPath + selectedOption+"/"+currentDateandTime  + ".png";
+                                Log.d("path is","111111111111111111111111111111111111111111111"+path);
                                 File f = new File(path);
                                 if (f.exists()) {
                                     Intent intent = new Intent(ScrImageListing.this,
@@ -213,7 +218,8 @@ public class ScrImageListing extends AppCompatActivity implements View.OnClickLi
                         cardSecond.setTag(imageTypeStill);
                         int finalPos1 = pos;
                         selectedOption = finalPos1 + 1;
-                        String path = baseFolderPath + selectedOption + ".png";
+                        String path = baseFolderPath + selectedOption +"/"+currentDateandTime  + ".png";
+                        Log.d("path is","22222222222222222222222222222222222222222"+path);
                         ImageView ivImage = cardSecond.findViewById(R.id.iv_slide_second);
                         LinearLayout ll_remove = cardSecond.findViewById(R.id.ll_remove_second);
                         LinearLayout ll_add = cardSecond.findViewById(R.id.ll_add_second);
@@ -255,7 +261,9 @@ public class ScrImageListing extends AppCompatActivity implements View.OnClickLi
                             public void onClick(View view) {
                                 cvSelectedCard = (CardView) view;
                                 selectedOption = finalPos1 + 1;
-                                String path = baseFolderPath + selectedOption + ".png";
+                                String path = baseFolderPath + selectedOption +"/"+currentDateandTime + ".png";
+                                Log.d("path is",path);
+                                Log.d("path is","333333333333333333333333333333333333333333");
                                 File f = new File(path);
                                 if (f.exists()) {
                                     Intent intent = new Intent(ScrImageListing.this,
@@ -418,7 +426,8 @@ public class ScrImageListing extends AppCompatActivity implements View.OnClickLi
         Log.d(TAG, "onUploadSuccess: " + response);
         count++;
         if (count < totalCount) {
-            String path = FileUtils.getAppFolderPath() + files[count];
+            String path = FileUtils.getAppFolderPath()  +files[count];
+
             s3Uploader.initUpload(path);
         } else if (count == totalCount) {
             PostVehicleData data = new PostVehicleData();
@@ -428,15 +437,18 @@ public class ScrImageListing extends AppCompatActivity implements View.OnClickLi
                 String url = s3Urls.get(i);
                 String name = url.substring(url.lastIndexOf("/") + 1);
 
-                if (url.toLowerCase().contains("png")||url.toLowerCase().contains("png")) {
+                if (url.toLowerCase().contains("1.jpeg")){
                     PostVehicleData.UserStillImage userStillImage = new PostVehicleData.UserStillImage();
                     userStillImage.setImageUrl(url);
                     userStillImages.add(userStillImage);
 
-                } else {
+
+
+                } else  if (url.toLowerCase().contains("gif")){
                     PostVehicleData.UserSpinImage userSpinImage = new PostVehicleData.UserSpinImage();
                     userSpinImage.setImageUrl(url);
                     userSpinImages.add(userSpinImage);
+
                 }
             }
             data.setUserSpinImage(userSpinImages);
@@ -444,6 +456,14 @@ public class ScrImageListing extends AppCompatActivity implements View.OnClickLi
             data.setVehicleRegNumber(VehicleFormData.getInstance().getREG_NO());
             data.setVehicleStatus("In-Progress");
             data.setVehicleVINNumber(VehicleFormData.getInstance().getVIN_NO());
+            for (int i = 0; i < s3Urls.size(); i++) {
+                String url = s3Urls.get(i);
+                if(url.toLowerCase().contains("vin")){
+                    data.setVehicleVINNumberImageUrl(url);
+                }
+            }
+
+            Log.d("Image is",VehicleFormData.getInstance().getVIN_IMAGE_PATH());
             data.setVehicleWorkFlowImageUrl(VehicleFormData.getInstance().getBRAND_NAME_IMAGE());
 
             String post = FileUtils.getJsonFromObject(data);
